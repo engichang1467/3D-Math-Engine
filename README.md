@@ -7,6 +7,15 @@ Developing a 3D math engine in C++ that can perform basic calculations with vect
 - [ ] Matrices
 - [ ] Quaternions
 
+## How to use it?
+
+- Use the command below, and type ```make``` command to compile the engine. Then, type ```./math``` to see the output.
+```bash
+>> make
+...
+>> ./math
+```
+
 ## Vectors
 
 ### Create a Vector
