@@ -1,10 +1,11 @@
 # 3D Math Engine
 
-Developing a 3D math engine in C++ that can perform basic calculations with vectors, matrices, and Quaternions.
+- Developing a 3D math engine in C++ that can perform basic calculations with vectors, matrices, and Quaternions.
+- If you want to check it out, you are welcome to play around on ```main.cpp```, and check out the [documentation](https://github.com/engichang1467/3D-Math-Engine/wiki).
 
 ## Engine can now perform
 - [x] Vectors
-- [ ] Matrices
+- [x] Matrices
 - [ ] Quaternions
 
 ## How to use it?
@@ -16,69 +17,32 @@ Developing a 3D math engine in C++ that can perform basic calculations with vect
 >> ./math
 ```
 
-## Vectors
+## Sample Usage
 
-### Create a Vector
+### Create Vector, Matrices, and Quad
+
 ```c++
 Vector3d vector1(2.0f, 3.0f, 1.0f);
 Vector3d vector2(1.0f, 2.0f, 0.0f);
+
+Matrix3d matrix1(2.0f, 3.0f, 1.0f, 
+                 2.0f, 1.0f, 4.0f, 
+                 5.0f, 3.0f, 2.0f);
+
+Matrix3d matrix2(5.0f, 3.0f, 2.0f, 
+                 2.0f, 1.0f, 1.0f, 
+                 5.0f, 3.0f, 2.0f);
 ```
 
-### Print out a Vector
+### Basic Arithmatic
 ```c++
-cout << vector1 << endl;
+Vector3d result = vector1 + vector2;
+Vector3d result2 = vector1 - vector2;
+vector1 *= 3.0f;
+
+Matrix3d result3 = matrix1 + matrix2;
+Matrix3d result4 = matrix1 * matrix2;
 ```
 
-### Vector Addition
-```c++
-Vector3d vector3 = vector1 + vector2;
-// or
-vector1 += vector2;
-```
-
-### Vector Subtraction
-```c++
-Vector3d vector3 = vector1 - vector2;
-// or
-vector1 -= vector2;
-```
-
-### Scalar Multiplication
-```c++
-Vector3d vector3 = vector1 * 5.0f;
-// or
-vector1 *= 5.0f;
-```
-
-### Scalar Division
-```c++
-Vector3d vector3 = vector1 / 5.0f;
-// or
-vector1 /= 5.0f;
-```
-
-### Dot Product
-```c++
-float dotProduct = vector1.dot(vector2);
-// or
-float dotProduct = vvector1 * vector2;
-```
-
-### Cross Product
-```c++
-Vector3d vector3 = vector1.cross(vector2);
-// or
-Vector3d vector4 = vector1 % vector2;
-// or
-vector1 %= vector2;
-```
-
-### Vector Magnitude
-```c++
-float magnitude = vector1.magnitude();
-```
-
-### Vector Normalization
-```c++
-vector1.normalize();
-```
+## Want to Know More?
+- [Check out the documentation here](https://github.com/engichang1467/3D-Math-Engine/wiki)
