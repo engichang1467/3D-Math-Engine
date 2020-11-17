@@ -2,7 +2,7 @@
  *
  * **Vector3d.cpp**
  * 
- * This file shows the object structure of our vector library
+ * This file shows the implemented functions of our vector library
  * 
  * ----
  * 
