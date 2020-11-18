@@ -1,5 +1,5 @@
 
-#include "Matrix3d.h"
+#include "Quaternion3d.h"
 
 int main()
 {
@@ -112,15 +112,49 @@ int main()
     // Matrix3d res = m.getTransposeOfMatrix();
 
     /* Vector Transformation */
-    Matrix3d m(0.0f, 0.0f, 0.0f, 
-               0.0f, 0.0f, -1.0f, 
-               0.0f, 1.0f, 0.0f);
+    // Matrix3d m(0.0f, 0.0f, 0.0f, 
+    //            0.0f, 0.0f, -1.0f, 
+    //            0.0f, 1.0f, 0.0f);
 
-    Vector3d vec(0,1,0);
+    // Vector3d vec(0,1,0);
 
-    Vector3d vec1 = m * vec;
+    // Vector3d vec1 = m * vec;
 
-    cout << vec1 << endl;
+    // cout << vec1 << endl;
+
+    /* Quaternion */
+
+    // Quaternion3d q(90.0f, axis);
+    // Quaternion3d p(10.0f, axis);
+
+
+    /* Quaternion Addition */
+    // Quaternion3d nQ = q + p;
+    // q += p;
+
+    /* Quaternion Scalar Multiplication */
+    // Quaternion3d res = q * 3;
+    // q *= 3;
+
+    /* Quaternion Norm */
+    // float magnitude = q.norm();
+
+    /* Quaternion Conjugate */
+    // Quaternion3d conjugate = q.conjugate();
+
+    /* Quaternion Inverse */
+    // Quaternion3d inverseQua = q.inverse();
+
+    /* Vector Rotation */
+
+    Vector3d v(0,1,0);
+    Vector3d axis(1,0,0);
+
+    Vector3d rotatedVector = v.rotateVectorAboutAngleAndAxis(90.0f, axis);
+
+    cout << rotatedVector << endl;
+
+
 
     return 0;
 }
