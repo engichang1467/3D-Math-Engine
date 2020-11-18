@@ -13,6 +13,7 @@
  */
 
 #include "Vector3d.h"
+#include "Quaternion3d.h"
 
 namespace R3DMathEngine
 {
@@ -145,10 +146,39 @@ namespace R3DMathEngine
             }
         }
 
+        Vector3d Vector3d::rotateVectorAboutAngleAndAxis(float uAngle, Vector3d &uAxis)
+        {
+            // Convert Vector to quaternion
+            Quaternion3d p(0, (*this));
+
+            // Normalize the axis
+            uAxis.normalize();
+
+            // Create the real quaternion
+            Quaternion3d q(uAngle, uAxis);
+
+            // Convert quaternion to unit norm quaternion
+            q.convertToUnitNormQuaternion();
+
+            // Get the inverse of the quaternion
+            Quaternion3d qInverse = q.inverse();
+
+            // Rotate the quaternion
+            Quaternion3d rotatedVector = q * p * qInverse;
+
+            // Return the vector part of the quaternion
+            return rotatedVector.v;
+        }
+
         ostream& operator << (ostream& stream, const Vector3d &vector)
         {
             stream << "Vector3d (" << vector.x << ", " << vector.y << ", " << vector.z << ")";
             return stream;
+        }
+
+        void Vector3d::show()
+        {
+            cout << "[" << x << ", " << y << ", " << z << "]" << endl;
         }
 
 }

@@ -11,6 +11,8 @@
  * Copyright (c) 2020. All rights reserved.
  *  
  */
+#pragma once
+
 #include <iostream>
 #include <cmath>
 
@@ -68,6 +70,11 @@ namespace R3DMathEngine
             // Unit Vector (Normalize)
             void normalize();
 
+            // Vector Rotation
+            Vector3d rotateVectorAboutAngleAndAxis(float uAngle, Vector3d &uAxis);
+
+            // Output Vector
             friend ostream& operator << (ostream& stream, const Vector3d &vector);
+            void show();
     };
 }
